@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'List Name';
-  todo = [
+  todos = [
     { 
       label: 'Buy milk', 
       done: false, 
-      priority: 3 
+      priority: 3
     },
     { 
       label: 'Buy pickles', 
@@ -23,10 +23,18 @@ export class AppComponent {
       done: false, 
       priority: 2
     },
-    { 
-      label: 'Buy crackers', 
-      done: false, 
-      priority: 3 
-    },
   ];
+
+  addTodo(newTodoLabel) {
+    let newTodo = {
+      label: newTodoLabel,
+      priority: 1,
+      done: false
+    };
+    this.todos.push(newTodo);
+  }
+
+  deleteTodo(todo) {
+    this.todos = this.todos.filter( t => t.label !== todo.label );
+  };
 }
