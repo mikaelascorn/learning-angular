@@ -27,15 +27,25 @@ export class AppComponent {
   ];
 
   addTodo(newTodoLabel, newDescLabel, newDetailsLabel) {
-    let newTodo = {
-      title: newTodoLabel,
-      desc: newDescLabel,
-      details: newDetailsLabel
-    };
-    this.todos.push(newTodo);
+    if ( newTodoLabel && newDescLabel && newDetailsLabel !== '' ) {
+      let newTodo = {
+        title: newTodoLabel,
+        desc: newDescLabel,
+        details: newDetailsLabel
+      };
+      this.todos.push(newTodo);
+    } else {
+      alert('Please fill out the todo fields!');
+    }
   }
 
   deleteTodo(todo) {
     this.todos = this.todos.filter(t => t.title !== todo.title);
+  }
+
+  Ctrl(scope) {
+    console.log(scope);
+    
+    this.date = new Date();
   }
 }

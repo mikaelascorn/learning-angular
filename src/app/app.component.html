@@ -20,7 +20,7 @@
       </li>
       <button
       (click)="addTodo(newTodo.value, newDesc.value, newDetails.value); 
-      newTodo.value=''
+      newTodo.value=''; newDesc.value=''; newDetails.value=''
       ">Add Todo Item</button>
     </ul>
   </div>
@@ -30,9 +30,15 @@
         <p>{{todo.title}}</p>
         <p>{{todo.desc}}</p>
         <p>{{todo.details}}</p>
-        <p><button (click)="deleteTodo(todo)">Delete</button></p>
+        <div ng-app ng-controller="Ctrl">
+          {{date | date:'yyyy-MM-dd'}}
+        </div>
+        <button (click)="deleteTodo(todo)"><i class="fas fa-trash"></i></button>
       </li>
     </ul>
+  </div>
+  <div>
+    <p>Load More</p>
   </div>
 </div>
 
