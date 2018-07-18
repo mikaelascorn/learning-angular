@@ -1,36 +1,39 @@
-<h1>{{title}}</h1>
-<p>{{total}} <span>{{todos.length}}</span></p>
-
-
-  <li>
-    <label for="title">Todo Title</label>
-    <input id="title" type="text" placeholder="Finish Assignment" #newTodo/>
-  
-    <label for="desc">Todo description</label>
-    <input id="desc" type="text" placeholder="Angular Todo List" #newDesc />
-  
-    <label for="details">Todo Details</label>
-    <input id="details" type="text" placeholder="Styles left to do" #newDetails/>
-  </li>
-  <button
-    (click)="addTodo(newTodo.value, newDesc.value, newDetails.value); 
-    newTodo.value=''
-  ">Add Todo Item</button>
-<div>
-  <ul>
-    <li *ngFor="let todo of todos">
-      <p>{{todo.title}}</p>
-      <p>{{todo.desc}}</p>
-      <p>{{todo.details}}</p>
-      <p><button (click)="deleteTodo(todo)">Delete</button></p>
-    </li>
-  </ul>
+<div class="wrapper">
+  <div class="allTodo">
+    <h1>{{title}}</h1>
+    <p>{{total}} <span>{{todos.length}}</span></p>
+    <label for="see-todo">
+      <i class="fas fa-sort-down"></i>
+      <i class="fas fa-plus"></i>
+    </label>
+    <input type="checkbox" id="see-todo">
+    <ul class="addTodo">
+      <li>
+        <label for="title">Todo Title</label>
+        <input id="title" type="text" placeholder="Finish Assignment" #newTodo/>
+        
+        <label for="desc">Todo description</label>
+        <input id="desc" type="text" placeholder="Angular Todo List" #newDesc />
+        
+        <label for="details">Todo Details</label>
+        <input id="details" type="text" placeholder="Styles left to do" #newDetails/>
+      </li>
+      <button
+      (click)="addTodo(newTodo.value, newDesc.value, newDetails.value); 
+      newTodo.value=''
+      ">Add Todo Item</button>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let todo of todos">
+        <p>{{todo.title}}</p>
+        <p>{{todo.desc}}</p>
+        <p>{{todo.details}}</p>
+        <p><button (click)="deleteTodo(todo)">Delete</button></p>
+      </li>
+    </ul>
+  </div>
 </div>
 
 
- <!-- addTodo(newDesc.value); addTodo(newDetails.value); -->
-<!--  -->
-     <!-- addTodo(newDesc.value); -->
-
-
-     <!-- newDesc.value='', newDetails.value=''; -->
