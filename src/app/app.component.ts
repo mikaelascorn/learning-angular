@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Cority UI Engineer Test';
+  title = 'List Name';
+  todo = [
+    { 
+      label: 'Buy milk', 
+      done: false, 
+      priority: 3 
+    },
+    { 
+      label: 'Buy pickles', 
+      done: false, 
+      priority: 1
+    },
+    { 
+      label: 'Buy garlic', 
+      done: false, 
+      priority: 2
+    },
+    { 
+      label: 'Buy crackers', 
+      done: false, 
+      priority: 3 
+    },
+  ];
 }

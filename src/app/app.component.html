@@ -1,1 +1,12 @@
 <h1>{{title}}</h1>
+<!-- <p>{{total}}</p> -->
+
+<div>
+  <ul>
+    <li *ngFor="let todo of todo">
+      <p>{{todo.label}}</p>
+      <p>{{todo.priority}}</p>
+      <p>{{todo.done}}</p>
+    </li>
+  </ul>
+</div>
