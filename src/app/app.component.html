@@ -1,23 +1,36 @@
 <h1>{{title}}</h1>
-<!-- <p>{{total}}</p> -->
+<p>{{total}} <span>{{todos.length}}</span></p>
 
-<!-- <form #newTodo>
-  <input type="text" #newTodo placeholder="To do title">
-  <input type="text" placeholder="To do description">
-  <input type="submit" value="Add to do" (click)="addTodo(newTodo.value)">
-</form> -->
-<input type="text" #newTodo />
-<button
-  (click)="addTodo(newTodo.value); 
-  newTodo.value=''
-">Add Todo Item</button>
+
+  <li>
+    <label for="title">Todo Title</label>
+    <input id="title" type="text" placeholder="Finish Assignment" #newTodo/>
+  
+    <label for="desc">Todo description</label>
+    <input id="desc" type="text" placeholder="Angular Todo List" #newDesc />
+  
+    <label for="details">Todo Details</label>
+    <input id="details" type="text" placeholder="Styles left to do" #newDetails/>
+  </li>
+  <button
+    (click)="addTodo(newTodo.value, newDesc.value, newDetails.value); 
+    newTodo.value=''
+  ">Add Todo Item</button>
 <div>
   <ul>
     <li *ngFor="let todo of todos">
-      <p>{{todo.label}}</p>
-      <p>{{todo.priority}}</p>
-      <p>{{todo.done}}</p>
+      <p>{{todo.title}}</p>
+      <p>{{todo.desc}}</p>
+      <p>{{todo.details}}</p>
       <p><button (click)="deleteTodo(todo)">Delete</button></p>
     </li>
   </ul>
 </div>
+
+
+ <!-- addTodo(newDesc.value); addTodo(newDetails.value); -->
+<!--  -->
+     <!-- addTodo(newDesc.value); -->
+
+
+     <!-- newDesc.value='', newDetails.value=''; -->

@@ -1,40 +1,41 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'List Name';
+  title = "List Name";
+  total = "Total";
   todos = [
-    { 
-      label: 'Buy milk', 
-      done: false, 
-      priority: 3
+    {
+      title: "Curabitur Rutrum ut",
+      desc: "false",
+      details: "3"
     },
-    { 
-      label: 'Buy pickles', 
-      done: false, 
-      priority: 1
+    {
+      title: "Buy pickles",
+      desc: "false",
+      details: "1"
     },
-    { 
-      label: 'Buy garlic', 
-      done: false, 
-      priority: 2
-    },
+    {
+      title: "Buy garlic",
+      desc: "false",
+      details: "Hello"
+    }
   ];
 
-  addTodo(newTodoLabel) {
+  addTodo(newTodoLabel, newDescLabel, newDetailsLabel) {
     let newTodo = {
-      label: newTodoLabel,
-      priority: 1,
-      done: false
+      title: newTodoLabel,
+      desc: newDescLabel,
+      details: newDetailsLabel
     };
     this.todos.push(newTodo);
   }
 
   deleteTodo(todo) {
-    this.todos = this.todos.filter( t => t.label !== todo.label );
-  };
+    this.todos = this.todos.filter(t => t.title !== todo.title);
+  }
 }
