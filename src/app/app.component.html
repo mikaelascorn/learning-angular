@@ -20,20 +20,20 @@
 
         <form class="form-inline">
           <div class="form-group">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                <img src="../assets/calendar-alt-solid.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
-              </button>
-            </div>
             <div class="input-group">
               <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                  <img src="../assets/calendar-alt-solid.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+                </button>
+              </div>
             </div>
           </div>
         </form>
 
       </li>
       <button
-      (click)="addTodo(newTodo.value, newDesc.value, newDetails.value); 
+      (click)="addTodo(newTodo.value, newDesc.value, newDetails.value, d.value); 
       newTodo.value=''; newDesc.value=''; newDetails.value=''
       ">Add Todo Item</button>
     </ul>
@@ -44,9 +44,11 @@
         <p>{{todo.title}}</p>
         <p>{{todo.desc}}</p>
         <p>{{todo.details}}</p>
-        
-        <hr/>
-        <pre>Model: {{ model | json }}</pre>
+        <p><i class="fas fa-calendar-alt"></i> {{todo.d}}</p>
+
+        <!-- <hr/>
+        <pre>Model: {{ model | json }}</pre> -->
+
         <button (click)="deleteTodo(todo)"><i class="fas fa-trash"></i></button>
       </li>
     </ul>

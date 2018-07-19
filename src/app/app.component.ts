@@ -12,30 +12,34 @@ export class AppComponent {
     {
       title: "Curabitur Rutrum ut",
       desc: "false",
-      details: "3"
+      details: "ahf",
+      d: "Wed Jun 13, 2018"
     },
     {
       title: "Buy pickles",
       desc: "false",
-      details: "1"
+      details: "afdaf",
+      d: "Wed Jun 13, 2018"
     },
     {
       title: "Buy garlic",
       desc: "false",
-      details: "Hello"
+      details: "Hello",
+      d: "Wed Jun 13, 2018"
     }
   ];
 
-  addTodo(newTodoLabel, newDescLabel, newDetailsLabel) {
-    if ( newTodoLabel && newDescLabel && newDetailsLabel !== '' ) {
+  addTodo(newTodoLabel, newDescLabel, newDetailsLabel, newdlabel) {
+    if (newTodoLabel && newDescLabel && newDetailsLabel !== "") {
       let newTodo = {
         title: newTodoLabel,
         desc: newDescLabel,
-        details: newDetailsLabel
+        details: newDetailsLabel,
+        d: newdlabel
       };
       this.todos.push(newTodo);
     } else {
-      alert('Please fill out the todo fields!');
+      alert("Please fill out all the fields!");
     }
   }
 
@@ -43,9 +47,9 @@ export class AppComponent {
     this.todos = this.todos.filter(t => t.title !== todo.title);
   }
 
-  Ctrl(scope) {
-    console.log(scope);
-    
-    // this.date = new Date();
-  }
+  // Model: {
+  //   year: 2018;
+  //   month: 8;
+  //   day: 5;
+  // };
 }
