@@ -17,6 +17,20 @@
         
         <label for="details">Todo Details</label>
         <input id="details" type="text" placeholder="Styles left to do" #newDetails/>
+
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                <img src="../assets/calendar-alt-solid.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+              </button>
+            </div>
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            </div>
+          </div>
+        </form>
+
       </li>
       <button
       (click)="addTodo(newTodo.value, newDesc.value, newDetails.value); 
@@ -30,9 +44,9 @@
         <p>{{todo.title}}</p>
         <p>{{todo.desc}}</p>
         <p>{{todo.details}}</p>
-        <div ng-app ng-controller="Ctrl">
-          {{date | date:'yyyy-MM-dd'}}
-        </div>
+        
+        <hr/>
+        <pre>Model: {{ model | json }}</pre>
         <button (click)="deleteTodo(todo)"><i class="fas fa-trash"></i></button>
       </li>
     </ul>
@@ -40,6 +54,9 @@
   <div>
     <p>Load More</p>
   </div>
+
+  <ngbd-datepicker-popup></ngbd-datepicker-popup>
+
 </div>
 
 

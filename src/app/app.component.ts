@@ -46,6 +46,6 @@ export class AppComponent {
   Ctrl(scope) {
     console.log(scope);
     
-    this.date = new Date();
+    // this.date = new Date();
   }
 }
