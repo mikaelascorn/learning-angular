@@ -13,7 +13,8 @@ export class AppComponent {
       title: "Curabitur Rutrum ut",
       desc: "false",
       details: "ahf",
-      d: "Wed Jun 13, 2018"
+      d: "Wed Jun 13, 2018",
+      // image: 
     },
     {
       title: "Buy pickles",
@@ -30,8 +31,9 @@ export class AppComponent {
   ];
 
   addTodo(newTodoLabel, newDescLabel, newDetailsLabel, newdlabel) {
-    if (newTodoLabel && newDescLabel && newDetailsLabel !== "") {
+    if (newTodoLabel && newDescLabel && newDetailsLabel && newdlabel !== "") {
       let newTodo = {
+        // image:
         title: newTodoLabel,
         desc: newDescLabel,
         details: newDetailsLabel,

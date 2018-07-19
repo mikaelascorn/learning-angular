@@ -1,35 +1,51 @@
 <div class="wrapper">
   <div class="allTodo">
-    <h1>{{title}}</h1>
-    <p>{{total}} <span>{{todos.length}}</span></p>
-    <label for="see-todo">
-      <i class="fas fa-sort-down"></i>
-      <i class="fas fa-plus"></i>
-    </label>
+    <div class="user-wrapper">
+      <div class="user-inputs">
+        <div class="title">
+          <h1>{{title}}</h1>
+          <p>{{total}} <span>{{todos.length}}</span></p>
+        </div>
+        <label for="see-todo">
+          <i class="fas fa-plus"></i>
+          <i class="fas fa-sort-down"></i>
+        </label>
+      </div>
+    </div>
     <input type="checkbox" id="see-todo">
     <ul class="addTodo">
-      <li>
-        <label for="title">Todo Title</label>
-        <input id="title" type="text" placeholder="Finish Assignment" #newTodo/>
+      <li class="clearfix">
         
-        <label for="desc">Todo description</label>
-        <input id="desc" type="text" placeholder="Angular Todo List" #newDesc />
+        <div class="add-one">
+          <label for="title">Todo Title: </label>
+          <input id="title" type="text" placeholder="Finish Assignment" #newTodo/>
+        </div>
         
-        <label for="details">Todo Details</label>
-        <input id="details" type="text" placeholder="Styles left to do" #newDetails/>
+        <div class="add-one">
+          <label for="desc">Todo Description: </label>
+          <input id="desc" type="text" placeholder="Angular Todo List" #newDesc />
+        </div>
+        
+        <div class="add-one">
+          <label for="details">Todo Details: </label>
+          <input id="details" type="text" placeholder="Styles left to do" #newDetails/>
+        </div>
 
-        <form class="form-inline">
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                  <img src="../assets/calendar-alt-solid.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
-                </button>
+        <div class="add-date">
+          <label for="d">Complete Todo By:</label>
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                    <img src="../assets/calendar-alt-solid.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
 
       </li>
       <button
@@ -45,10 +61,6 @@
         <p>{{todo.desc}}</p>
         <p>{{todo.details}}</p>
         <p><i class="fas fa-calendar-alt"></i> {{todo.d}}</p>
-
-        <!-- <hr/>
-        <pre>Model: {{ model | json }}</pre> -->
-
         <button (click)="deleteTodo(todo)"><i class="fas fa-trash"></i></button>
       </li>
     </ul>

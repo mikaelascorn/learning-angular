@@ -4,6 +4,78 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+.wrapper {
+  max-width: 960px;
+  margin: auto;
+}
+/* typography */
+h1 {
+  margin: 10px 0px 0px;
+  font-size: 22px;
+}
+.title p {
+  color: gray;
+}
+
+/* the header content */
+.user-wrapper {
+  margin-top: 10px;
+  border-radius: 3px 3px 0px 0px;
+  height: 90px;
+}
+.addTodo,
+.user-wrapper {
+  background-color: lightgrey;
+}
+.user-inputs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  align-content: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0px 30px;
+}
+.fas-sort-down {
+  position: absolute;
+  top: 10px;
+}
+label i {
+  padding: 20px;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+label i:hover {
+  background-color: darkgray;
+  border-radius: 50%;
+}
+.addTodo {
+  list-style-type: none;
+  padding: 0px 30px;
+}
+.add-one {
+  float: left;
+  width: calc(( 100% / 3 ) );  
+  padding: 10px 0px;
+  margin: 0 auto;
+
+}
+.add-one input {
+  padding: 8px 0px;
+  /* max-width: 140px; */
+}
+.add-date input {
+  float: left;
+}
+.addTodo label {
+  padding-right: 5px;
+}
+.form-inline {
+  display: inline;
+}
+
+
+/* Hide and show the input fields */
 input[type="checkbox"] {
   display: none;
 }
