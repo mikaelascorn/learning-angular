@@ -33,7 +33,7 @@ h1 {
   width: 100%;
   align-content: center;
   justify-content: space-between;
-  height: 100%;
+  min-height: 90px;
   padding: 0px 30px;
 }
 .fas-sort-down {
@@ -51,18 +51,19 @@ label i:hover {
 }
 .addTodo {
   list-style-type: none;
-  padding: 0px 30px;
+  padding: 25px 30px;
+  margin: 0px;
 }
 .add-one {
   float: left;
   width: calc(( 100% / 3 ) );  
-  padding: 10px 0px;
+  padding: 0px 0px 25px 0px;
   margin: 0 auto;
-
 }
 .add-one input {
-  padding: 8px 0px;
-  /* max-width: 140px; */
+  padding: 8px 7px;
+  max-width: 140px;
+  border: transparent;
 }
 .add-date input {
   float: left;
@@ -71,10 +72,43 @@ label i:hover {
   padding-right: 5px;
 }
 .form-inline {
-  display: inline;
+  display: inline-block;
 }
-
-
+.add-entry {
+  padding: 5px 10px;
+  margin:  25px 0px 3px 0px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.add-entry:hover {
+  color: slateblue;
+  border: 1px solid grey;
+}
+/* journal items */
+.user-todo ul {
+  padding: 0px;
+}
+.entry-wrapper {
+  border: 1px solid grey;
+}
+.todo-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0px;
+  padding: 0px 30px;
+  border-bottom: 1px solid grey;
+}
+.todo-entry:last-of-type {
+  border-bottom: none;
+}
+.allTodo {
+  background-color: lightgrey;
+}
+.entry-wrapper button {
+  padding: 15px;
+  border-radius: 50%;
+}
 /* Hide and show the input fields */
 input[type="checkbox"] {
   display: none;
@@ -86,5 +120,5 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 #see-todo:checked ~ .addTodo {
-  display:block;
+  display: block;
 }

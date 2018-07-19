@@ -35,8 +35,8 @@
           <label for="d">Complete Todo By:</label>
           <form class="form-inline">
             <div class="form-group">
-              <div class="input-group">
-                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group clearfix">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" >
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
                     <img src="../assets/calendar-alt-solid.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
@@ -46,23 +46,26 @@
             </div>
           </form>
         </div>
-
       </li>
-      <button
+      <button class="add-entry"
       (click)="addTodo(newTodo.value, newDesc.value, newDetails.value, d.value); 
       newTodo.value=''; newDesc.value=''; newDetails.value=''
       ">Add Todo Item</button>
     </ul>
   </div>
-  <div>
+  <div class="user-todo">
     <ul>
-      <li *ngFor="let todo of todos">
-        <p>{{todo.title}}</p>
-        <p>{{todo.desc}}</p>
-        <p>{{todo.details}}</p>
-        <p><i class="fas fa-calendar-alt"></i> {{todo.d}}</p>
-        <button (click)="deleteTodo(todo)"><i class="fas fa-trash"></i></button>
-      </li>
+      <div class="entry-wrapper">
+        <li class="todo-entry" *ngFor="let todo of todos">
+          <div class="entries">
+            <p>{{todo.title}}</p>
+            <p>{{todo.desc}}</p>
+            <p>{{todo.details}}</p>
+            <p><i class="fas fa-calendar-alt"></i> {{todo.d}}</p>
+          </div>
+          <button (click)="deleteTodo(todo)"><i class="fas fa-trash"></i></button>
+        </li>
+      </div>
     </ul>
   </div>
   <div>
