@@ -55,10 +55,17 @@ label i:hover {
   margin: 0px;
 }
 .add-one {
-  float: left;
-  width: calc(( 100% / 3 ) );  
+  float: none;
+  margin: 0px;
+  width: 100%;
   padding: 0px 0px 25px 0px;
-  margin: 0 auto;
+}
+ @media( min-width: 1000px ) {
+  .add-one {
+    float: left;
+    width: calc(( 100% / 3 ) );  
+    margin: 0 auto;
+  }   
 }
 .add-one input {
   padding: 8px 7px;
@@ -76,7 +83,7 @@ label i:hover {
 }
 .add-entry {
   padding: 5px 10px;
-  margin:  25px 0px 3px 0px;
+  margin:  3px 0px 3px 0px;
   border-radius: 8px;
   border: 1px solid transparent;
 }
@@ -116,9 +123,17 @@ input[type="checkbox"] {
 .addTodo {
   display: none;
 }
-.see-todo {
+.see-todo,
+.see-items {
   cursor: pointer;
 }
 #see-todo:checked ~ .addTodo {
   display: block;
 }
+.user-todo {
+  display: none;
+}
+#see-items:checked ~ .user-todo {
+  display: block;
+}
+
