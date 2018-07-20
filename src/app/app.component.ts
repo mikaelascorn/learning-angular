@@ -23,7 +23,7 @@ export class AppComponent {
       date: "Wed Jun 13, 2018"
     },
     {
-      title: "Buy garlic",
+      title: "Phasellus eget edemutnm",
       desc: "Vivamus fhalfj hafj ls",
       details: "Proin hfaljf hflajdf halgjla lhalfj afdag...",
       date: "Wed Jun 13, 2018"
